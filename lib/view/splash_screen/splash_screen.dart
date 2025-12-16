@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stylish_project/core/constant/imageconstant.dart';
+import 'package:stylish_project/view/homescreen/homescreen.dart';
+import 'package:stylish_project/view/onboard/onboard_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -9,6 +11,17 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    Future.delayed(Duration(seconds: 3)).then((_) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => OnboardScreen()),
+      );
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
